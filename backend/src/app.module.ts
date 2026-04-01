@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
+import { MailModule } from './mail/mail.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -10,6 +12,8 @@ import { PrismaModule } from './prisma/prisma.module';
       isGlobal: true, // Makes the configuration available globally
     }),
     PrismaModule,
+    MailModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

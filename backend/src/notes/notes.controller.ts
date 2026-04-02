@@ -4,7 +4,10 @@ import { JwtAuthGuard } from '../common/guards/jwt-auth.guard';
 import { CurrentUser } from '../common/decorators/user.decorator';
 import { CreateNoteDto } from './dto/create-note.dto';
 import { UpdateNoteDto } from './dto/update-note.dto';
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 
+@ApiTags('Notes')
+@ApiBearerAuth()
 @Controller('notes')
 @UseGuards(JwtAuthGuard)
 

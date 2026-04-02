@@ -7,6 +7,7 @@ import { MailModule } from './mail/mail.module';
 import { AuthModule } from './auth/auth.module';
 import { JwtStrategy } from './auth/jwt.strategy';
 import { NotesModule } from './notes/notes.module';
+import { AdminModule } from './admin/admin.module';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { NotesModule } from './notes/notes.module';
     PrismaModule,
     MailModule,
     AuthModule,
-    NotesModule
+    NotesModule,
+    AdminModule
   ],
   controllers: [AppController],
   providers: [AppService, JwtStrategy],

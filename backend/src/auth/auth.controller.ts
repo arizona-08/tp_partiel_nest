@@ -5,7 +5,10 @@ import { VerifyEmailDto } from "./dto/verify-email.dto";
 import { Verify2FADto } from "./dto/verify-2fa.dto";
 import { LoginDto } from "./dto/login.dto";
 import { register } from "module";
+import { ApiTags } from "@nestjs/swagger";
 
+
+@ApiTags('Auth')
 @Controller('auth')
 export class AuthController {
     constructor(private readonly authService: AuthService) {}

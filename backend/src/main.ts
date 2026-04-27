@@ -16,7 +16,13 @@ async function bootstrap() {
     .build()
   
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('api', app, document, {
+    swaggerOptions: {
+      validatorUrl: null, // Désactive le validateur externe (qui ralentit souvent le chargement local)
+      docExpansion: 'none', // Garde les contrôleurs repliés par défaut pour accélérer le rendu
+      filter: true, // Ajoute une barre de recherche pratique
+    },
+  });
   await app.listen(process.env.PORT as string);
 }
 

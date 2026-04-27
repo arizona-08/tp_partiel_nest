@@ -10,10 +10,10 @@ export class MailService {
   async sendVerificationEmail(email: string, code: string) {
     try {
       await this.mailerService.sendMail({
-        to: email, // Adresse de destination
-        subject: 'Vérification de votre compte', // Objet
-        text: `Voici votre code de vérification : ${code}`, // Version texte
-        html: `<p>Voici votre code de vérification : <b>${code}</b></p>`, // Version HTML
+        to: email,
+        subject: 'Vérification de votre compte',
+        text: `Voici votre code de vérification : ${code}`,
+        html: `<p>Voici votre code de vérification : <b>${code}</b></p>`,
       });
       this.logger.log(`Email de vérification envoyé à ${email}`);
     } catch (error) {

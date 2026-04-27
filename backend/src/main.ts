@@ -18,9 +18,9 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document, {
     swaggerOptions: {
-      validatorUrl: null, // Désactive le validateur externe (qui ralentit souvent le chargement local)
-      docExpansion: 'none', // Garde les contrôleurs repliés par défaut pour accélérer le rendu
-      filter: true, // Ajoute une barre de recherche pratique
+      validatorUrl: null,
+      docExpansion: 'none',
+      filter: true,
     },
   });
   await app.listen(process.env.PORT as string);

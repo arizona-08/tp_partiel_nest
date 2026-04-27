@@ -5,6 +5,8 @@ COPY package*.json ./
 RUN npm install
 COPY --chown=node:node . .
 
+RUN chmod +x start.sh
+
 USER node
 EXPOSE 8000
-CMD ["npm", "run", "start:dev"]
+CMD ["sh", "start.sh"]

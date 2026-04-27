@@ -16,7 +16,13 @@ async function bootstrap() {
     .build()
   
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('api', app, document, {
+    swaggerOptions: {
+      validatorUrl: null,
+      docExpansion: 'none',
+      filter: true,
+    },
+  });
   await app.listen(process.env.PORT as string);
 }
 
